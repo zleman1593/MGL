@@ -1,0 +1,284 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Missoula Guide Lunches</title>
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    {{> main}}
+</body>
+<template name="main">
+    <img src="/img/logo.png" class="logoHidden">
+    <!-- Navigation -->
+    <nav class="navbar navbar-trans navbar-hidden navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                {{#if cart}}
+                    <p class="navbar-btn navbar-toggle">
+                    <a href="#scrollCart" class="btn btn-warning pull-right review">Review Order</a>
+                </p>
+                   {{/if}} 
+                <!--<a class="navbar-brand" href="#">Missoula Guide Lunches</a>!-->
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+          
+                    <!-- <li>
+                        <a href="#order">Browse Menu</a>
+                    </li>
+                    <li>
+                        <a href="#about">About/Contact</a>
+                    </li> -->
+                  <!--   {{#if cart}}
+                    <li>
+                        <a href="#cart">Cart ({{cartCount}})</a>
+                    </li>
+                    {{/if}} -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Header -->
+    <div class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <!-- <h1>Missoula Guide Lunches</h1>!-->
+                        <div class="thumbnail" style="background-color: rgba(255, 255, 255, 0) !important; border: 0px  #ddd; !important">
+                            <img src="/img/logo.png">
+                        </div>
+                        <h3>Delicious Food for your River Tours</h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="#order" class="btn btn-default btn-lg"><i class="fa fa-cutlery fa-fw"></i> <span class="network-name">Browse Menu</span></a>
+                            </li>
+                            <li>
+                                <a href="javascript:window.scrollTo(0,document.body.scrollHeight - 1200);" class="btn btn-default btn-lg smallScreen"><i class="fa fa-user fa-fw"></i> <span class="network-name"> Meet  Chef</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.intro-header -->
+    <!-- Page Content -->
+    <div class="content-section-a">
+        <div class="alert alert-info" role="alert" id="directions">Select meals and checkout at the bottom of the page.</div>
+        <div class="container" name="order" id="order">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Entrees</h2>
+                    <h3 class="section-heading">Breakfast</h3>
+                    <h4>The Carsini:</h4>
+                    <i> Bacon, roast beef, egg and cheddar cheese on a Everything bagel or plain.</i>
+                    <input id="b0" type="text" value="0" name="Carsini meal">
+                    <h4>The Porterhouse:</h4>
+                    <i> Homemade sausage or bacon, egg, cheese on a Everything bagel or plain.</i>
+                    <input id="b1" type="text" value="0" name="Porterhouse">
+                    <h4>The Armin:</h4>
+                    <i> (2) scrambled eggs, refried beans, tomatillos and shredded cheese on a tortillas.</i>
+                    <input id="b2" type="text" value="0" name="Armin">
+                    <h4>Breakfast Sandwich:</h4>
+                    <i> 1 egg, meat and cheese ($7).</i>
+                    <input id="b3" type="text" value="0" name="Breakfast Sandwich">
+                    <h4>Fresh squeezed juice (OJ):</h4>
+                    <i>small (12oz) $3 </i>
+                    <input id="b4" type="text" value="0" name="Fresh Squeezed Juice (OJ)">
+                    <hr>
+                    <i>Add an extra egg or meat for $1 </i>
+                    <h3 class="section-heading">Lunch</h3>
+                    <h4>Pulled Chicken Sandwich:</h4>
+                    <i>Organic chicken breast, slow cooked in a special homemade BBQ sauce, topped with sautéed onions, served on a pretzel roll.</i>
+                    <input id="e1" type="text" value="0" name="Pulled chicken sandwich">
+                    <h4>Turkey Sandwich </h4>
+                    <i>On a wrap or wheat bread. Add tomato, pickle, lettuce, onion, sprouts, hot peppers, cheddar or Swiss cheese, mayo, mustard, pesto. Bacon is $1 Extra</i>
+                    <input id="e2" type="text" value="0" name="Turkey Sandwich">
+                    <h4>Tarragon Chicken Salad:</h4>
+                    <i>Organic chicken breast, celery, tarragon, pepper, salt, greek yogurt and mayo served on wheat bread with sprouts and tomato.</i>
+                    <input id="e3" type="text" value="0" name="Tarragon Chicken Salad">
+                    <h4> Roast Beef Sandwich:</h4>
+                    <i>Rare roast beef, grilled onions, mixed lettuce, tomato, horseradish mayo on a pretzel roll.</i>
+                    <input id="e4" type="text" value="0" name="Roast Beef Sandwich">
+                    <h4>Build your own Sandwich:</h4>
+                    <i>Build your sandwitch in the order summary section.</i>
+                    <i>Chooses of meat include turkey, roast beef, chicken salad or ham.</i>
+                    <br>
+                    <i><strong>Vegetables:</strong>  are lettuce, tomato, sprouts, onions, pickles any I'm missing</i>
+                    <br>
+                    <i><strong>Cheese:</strong> cheddar or swiss</i>
+                    <br>
+                    <i><strong>Condiments:</strong>  mayo, mustard, pesto, horseradish mayo </i>
+                    <br>
+                    <i><strong>Bread:</strong>  Wheat, wrap or pretzel</i>
+                    <h3 class="section-heading">Salads</h3>
+                    <h4>Caesar salad:</h4>
+                    <i>Romaine lettuce, croutons and caesar dressing</i>
+                    <input id="e6" type="text" value="0" name="Caesar salad">
+                    <h4>Mixed green salad:</h4>
+                    <i>Mixed lettuce, sprouts, tomato, cucumber, carrots and balsamic vinaigrette</i>
+                    <input id="e7" type="text" value="0" name="Mixed green salad">
+                    
+                    <hr>
+                    <i>Add chicken for $2 extra or salmon for $3 extra</i>
+                    <div class="clearfix"></div>
+                    <h3 class="section-heading">Snacks</h3>
+                    <h4>Hummus:</h4> <i>With pita chips or raw vegetables</i>
+                    <input id="s0" type="text" value="0" name="Hummus">
+                    <h4>Vegetable platter:</h4>
+                    <i> Carrots, celery, broccoli</i>
+                    <input id="s1" type="text" value="0" name="Vegetable platter">
+                    <h4>Health gorp</h4>
+                    <input id="s2" type="text" value="0" name="Health gorp">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h3 class="section-heading">Desserts</h3>
+                    <h4> Dark Chocolate Acai berries </h4>
+                    <input id="d1" type="text" value="0" name="Dark Chocolate acai berries">
+                    <h4> Brownie </h4>
+                    <input id="d2" type="text" value="0" name="Brownie"><i>(Rotated between dark chocolate, heath bar, and peanut butter)</i>
+                    <br>
+                    <h4>Dark Chocolate Carmel sea salt </h4>
+                    <input id="d3" type="text" value="0" name="Dark Chocolate Carmel sea salt">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h3 class="section-heading">Drinks</h3>
+                    <h4>Extra Bottled Water</h4>
+                    <input id="water" type="text" value="0" name="Extra water">
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6" name="about" id="about">
+                    <div class="notSmallScreen">
+                        {{>chefInfo}}
+                    </div>
+                    <h2 class="section-heading smallScreen">Information:</h2>
+                    <p class="lead"><strong> Phone:</strong> 847-476-5149</p>
+                    <p class="lead"><strong> Email:</strong> Missoulaguidelunches@gmail.com</p>
+
+                    <p class="lead"><strong> Loyalty Program: </strong> With every purchase of 10 meals you get a free entree!</p>
+                    <p class="lead" id="scrollCart"><strong>Pick up location:</strong> Double Tree between 8am-9am (Earlier pickup at my house) </p>
+                    <p class="lead">
+                        <strong>Everything</strong> is homemade except for wheat bread and wraps. I only use organic chicken.</p>
+                    <p class="lead">*Coolers not provided*</p>
+                    {{#if ordering}}
+          
+                    <h3> Note: All meals come with a bottle of water, dessert and piece of fruit </h3>
+                    <div class="alert alert-info" role="alert" id="directions">Tap to remove unwanted toppings.</div>
+                    <div class="alert alert-info" role="alert" id="directions2">Click/tap to remove unwanted toppings.</div>
+                             <p class="lead" id="cart"><strong> Order Summary</strong></p>
+                    <ul class="list-group">
+
+                        {{#each currentOrder}}
+                        <li class="list-group-item">
+                            <span class="badge">{{quant}}</span> {{name}} 
+                            {{#each showOptions}} 
+                            {{>option}}
+                            <hr class="seperateTags"> 
+                            {{/each}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Guide name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="mods">Modifications/Substitutions</label>
+                            <input type="text" class="form-control" id="mods" placeholder="e.g. A Carsini on white">
+                        </div>
+                    </form>
+                    <div class="alert alert-info" role="alert">Pay in person via cash, check, or Venmo.</div>
+                    <ul class="list-inline intro-social-buttons">
+                        <li>
+                            <a class="btn btn-default btn-lg" id="submitOrder"><i class="fa fa-cutlery fa-fw"></i> <span class="network-name">Submit Order</span></a>
+                        </li>
+                    </ul>
+                    <p class="hideDuplicateComment">Suggestions, comments, concerns or dietary issues contact me. Email me about any allergies.</p>
+                    {{else}} {{#if showSuccess}}
+                    <div class="alert alert-success" role="alert">
+                        <p class="lead">Your order has been submitted. Look for your confirmation email. Thank you!</p>
+                    </div>
+                    {{/if}} {{/if}}
+                    <div class="smallScreen">
+                        {{>chefInfo}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.content-section-a -->
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 addPadding">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="mailto:missoulaguidelunches@gmail.com">Contact Me</a>
+                        </li>
+                        <li>
+                            Suggestions, comments, concerns or dietary issues contact me. Email me about any allergies.
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; Missoula Guide Lunches 2015. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</template>
+<template name="option">
+    <li style="list-style-type: none;">
+        <input id="{{id}}" type="text" value="{{toppings}}" data-role="tagsinput"> </li>
+</template>
+<template name="chefInfo">
+    <div id="chef" name="chef">
+        <h2 class="section-heading">Meet the Chef</h2>
+        <p class="lead"> I'm Alden Drake. Not only can I cook, but I also fish.</p>
+        <p class="lead">I have previously worked at:</p>
+        <ul>
+            <li>
+                <p class="lead"> The Boka Restaurant Group in Chicago, IL (summer 2013 & 2014).</p>
+            </li>
+            <li>
+                <p class="lead"> Piccolo Sogno Chicago, IL (2012)</p>
+            </li>
+            <li>
+                <p class="lead">Bank Lane Bistro Lake Forest, IL (2011)</p>
+            </li>
+            <li>
+                <p class="lead">Pocono Lake Preserve Restaurant Pocono, PA (2007, 2008 & 2009)</p>
+            </li>
+            <li>
+                <p class="lead">I have also attended cooking classes in Tuscany 2014</p>
+            </li>
+        </ul>
+        <div class="thumbnail">
+            <img src="/img/photo-21.JPG">
+        </div>
+    </div>
+</template>

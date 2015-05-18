@@ -1,0 +1,30 @@
+
+{{#with allInfo}}
+    Thank you for your order {{personName}}.
+
+    The <strong>pick up location:</strong>  is at Double Tree between 8am-9am. (Earlier pickup at my house)
+
+
+    <strong>Order Details:</strong>
+    <ul >
+{{#each order}}
+<li>
+<span>{{quant}}</span>
+{{name}}
+<ul>
+{{#each topping}}
+<li>One with:{{this}}</li>
+{{/each}}
+</ul>
+</li>
+{{/each}}
+</ul>
+{{#each toppings}}
+{{this}}<br>
+{{/each}}
+{{comments}}
+
+{{/with}}
+<br>
+Thanks,
+Alden

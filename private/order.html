@@ -1,0 +1,25 @@
+{{#with allInfo}}
+Order Placed by: {{personName}} on {{time}}
+<br>
+{{personName}}'s email: {{email}}
+<br>
+Order Details:
+<ul >
+  {{#each order}}
+      <li>
+          <span>{{quant}}</span>
+        {{name}}
+          <ul>
+      {{#each topping}}
+      <li>One with:{{this}}</li>
+      {{/each}}
+              </ul>
+      </li>
+  {{/each}}
+</ul>
+{{#each toppings}}
+  {{this}}<br>
+  {{/each}}
+
+{{comments}}
+  {{/with}}
